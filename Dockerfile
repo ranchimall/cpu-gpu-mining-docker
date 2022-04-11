@@ -17,6 +17,7 @@ RUN apt-get install build-essential
 RUN apt-get install autotools-dev autoconf -y
 RUN apt-get install libcurl4 libcurl4-gnutls-dev -y
 RUN apt-get install checkinstall
+COPY start.sh .
 
 
 #Installing CPU-miner
@@ -25,5 +26,8 @@ WORKDIR ../cpuminer
 RUN ./autogen.sh
 RUN CFLAGS="-march=native" ./configure
 RUN make
+
+
+CMD ["/cpuminer/start.sh"]
 
 #minerd -o stratum+tcp://rm-pool.duckdns.org:3333 -a scrypt -u <user>.<worker> -p <workerpassword>
