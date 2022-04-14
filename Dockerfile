@@ -17,12 +17,13 @@ RUN apt-get install build-essential
 RUN apt-get install autotools-dev autoconf -y
 RUN apt-get install libcurl4 libcurl4-gnutls-dev -y
 RUN apt-get install checkinstall
-COPY run.sh .
+
 
 
 #Installing CPU-miner
 RUN git clone https://github.com/pooler/cpuminer
 WORKDIR ../cpuminer
+COPY run.sh .
 RUN ./autogen.sh
 RUN CFLAGS="-march=native" ./configure
 RUN make
