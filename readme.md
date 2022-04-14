@@ -10,12 +10,7 @@ Make a Docker Image using this dockerfile
 To run the docker Image
 
 ```bash
-  docker run -it <docker_image>
+  docker run -d --env USERNAME=<USERNAME> --env WORKER=<WORKER-ID> --env PASS=<WORKER-PASSWORD> <CONTAINER-ID>
 ```
 
-This will Start the container and a terminal will pop up.
-Now just enter your Username, password and Worker name..
-
-
-
-
+This will Start the container and detach it.
