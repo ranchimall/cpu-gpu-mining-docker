@@ -24,6 +24,7 @@ RUN apt-get install checkinstall
 RUN git clone https://github.com/pooler/cpuminer
 WORKDIR ../cpuminer
 COPY run.sh .
+RUN chmod +x run.sh
 RUN ./autogen.sh
 RUN CFLAGS="-march=native" ./configure
 RUN make
