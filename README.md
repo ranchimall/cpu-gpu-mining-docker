@@ -13,7 +13,7 @@ To run the docker Image
   docker run -d --env USERNAME=<USERNAME> --env WORKER=<WORKER-ID> --env PASS=<WORKER-PASSWORD> <IMAGE-ID>
   
   # Check logs 
-  docker logs <RUNNING-CONTAINER-ID>
+  docker logs <RUNNING-CONTAINER-ID> --follow
 ```
 
 This will Start the container and detach it.
